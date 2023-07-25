@@ -1,9 +1,10 @@
+require('dotenv').config();
 const bodyParser = require("body-parser")
 const express = require("express")
 const mongoose = require("mongoose")
 const ejs = require("ejs")
 
-mongoose.connect("mongodb://127.0.0.1:27017/sahil_test_todo_db");
+mongoose.connect(process.env.URI_STRING);
 
 const dataSchema = mongoose.Schema({
     title: String , 
